@@ -112,15 +112,15 @@ def exec_read_test(connstr, database, collection, documents, benchmarks, concurr
   print 'Average QPS: ', str(60/qtiming)
 
 ''' Options '''
-database = 'mongobench'
-collection = 'testcollection'
-documents = 100000 #1024
-benchmarks = 1
-concurrency = 128 # 64
-min_id = 0
-max_id = documents # 500
-connstr = "mongodb://localhost:28017/"
-str_cnt = 1 # number of UUID string elements in document
+database = 'mongobench' # The database to be used for benchmarking
+collection = 'testcollection' # The default collection prefix name
+documents = 100000 # The number of documents to be written and read
+benchmarks = 1 # The number of iterations for each type of benchmark (Read / Write)
+concurrency = 128 # The number of concurrent connections to be opened
+min_id = 0 # The minimum value for the range of docset_ids generated
+max_id = documents # 500 The maximum value for the range of docset_ids generated (when set to the 'documents' value find() executed during read tests will always return 1 document - decrease in order for find() to return multiple documents)
+connstr = "mongodb://localhost:28017/" # The default connection string - username and password can be added
+str_cnt = 1 # number of UUID string elements in document (increasing this value will increase document size)
 #host = sys.argv[1]
 #user = 'mongo-bench'
 #password = 'mongo-bench'
