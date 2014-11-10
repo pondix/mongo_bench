@@ -6,7 +6,7 @@ A benchmarking tool for MongoDB. The tool performs both read and write tests (us
 The number of documents to be written and read can also be defined (in the 'documents' variable) as well as the number of concurrent connections that should be created by the process. Currently all options need to be defined within the script. 
 
 Sample output:
-
+```
 WRITE TEST RESULTS (insert):
 Number of documents: 1024
 Concurrency: 64
@@ -19,9 +19,10 @@ Concurrency: 64
 Number of benchmarks: 1
 Average connection & query time: 0.00104909064248
 Average QPS:  57192.3888846
+```
 
 The variables that need to be configured are:
-
+```
 database = 'mongobench' # The database to be used for benchmarking
 collection = 'testcollection' # The default collection prefix name
 documents = 100000 # The number of documents to be written and read
@@ -31,3 +32,4 @@ min_id = 0 # The minimum value for the range of docset_ids generated
 max_id = documents # 500 The maximum value for the range of docset_ids generated (when set to the 'documents' value find() executed during read tests will always return 1 document - decrease in order for find() to return multiple documents)
 connstr = "mongodb://localhost:28017/" # The default connection string - username and password can be added
 str_cnt = 1 # number of UUID string elements in document (increasing this value will increase document size)
+```
